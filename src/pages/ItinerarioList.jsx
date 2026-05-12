@@ -1,9 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ItinerarioCard from '../components/ItinerarioCard'
-import { itinerarios } from '../mocks/itinerarios'
+import { itinerarios as mockData } from '../mocks/itinerarios'
 
 function ItinerarioList() {
-  const [lista, setLista] = useState(itinerarios)
+  const [lista, setLista] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulamos una llamada a la API con los mocks
+    setLista(mockData)
+    setLoading(false)
+  }, [])
+
+  if (loading) return <p>Cargando itinerarios...</p>
 
   return (
     <section>
