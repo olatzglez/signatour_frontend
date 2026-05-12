@@ -24,7 +24,10 @@ function Navbar() {
             <button onClick={handleLogout}>Cerrar sesión</button>
           </>
         ) : (
+          <>
           <Link to="/login">Iniciar sesión</Link>
+          <Link to="/register">Registrarse</Link> 
+          </>
         )}
       </div>
     </nav>
