@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { usuarios } from '../mocks/usuarios'
+import styles from './LoginForm.module.css'
 
 function LoginForm() {
   const [email, setEmail] = useState('')
@@ -18,7 +19,9 @@ function LoginForm() {
       return
     }
 
-    const usuario = usuarios.find(u => u.email === email && u.password === password)
+    const usuario = usuarios.find(
+      u => u.email === email && u.password === password
+    )
 
     if (!usuario) {
       setError('Email o contraseña incorrectos.')
@@ -30,30 +33,50 @@ function LoginForm() {
   }
 
   return (
-    <section>
-      <h1>Iniciar sesión</h1>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Contraseña</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Entrar</button>
-      </form>
+    <section className={styles.section}>
+      <div className={styles.card}>
+        <h1 className={styles.titulo}>Iniciar sesión</h1>
+
+        {error && (
+          <p className={styles.error} role="alert">{error}</p>
+        )}
+
+        <form className={styles.form} onSubmit={handleSubmit} noValidate>
+          <div className={styles.campo}>
+            <label htmlFor="email" className={styles.label}>Email</label>
+            <input
+              id="email"
+              type="email"
+              className={styles.input}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
+              aria-required="true"
+            />
+          </div>
+
+          <div className={styles.campo}>
+            <label htmlFor="password" className={styles.label}>Contraseña</label>
+            <input
+              id="password"
+              type="password"
+              className={styles.input}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
+              aria-required="true"
+            />
+          </div>
+
+          <button type="submit" className={styles.boton}>
+            Entrar
+          </button>
+        </form>
+
+        <p className={styles.enlace}>
+          ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
+        </p>
+      </div>
     </section>
   )
 }
