@@ -10,8 +10,7 @@ function Footer() {
           © {año} <span className={styles.marca}>SignaTour</span> — Itinerarios culturales accesibles
         </p>
         <p className={styles.texto}>
-          Proyecto desarrollado por 
-          <a href="https://github.com/olatzglez" className={styles.enlace}>Olatz González</a>.
+          Proyecto desarrollado por <a href="https://github.com/olatzglez" className={styles.enlace}>Olatz González</a> con ayuda de Clau.
         </p>
       </div>
     </footer>
