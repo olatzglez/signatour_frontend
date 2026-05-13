@@ -1,0 +1,192 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Hero */
+.hero {
+  background-color: var(--color-bg-soft);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-xxl) var(--space-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.heroTitulo {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  max-width: 700px;
+}
+
+.heroTitulo span {
+  color: var(--color-primary);
+}
+
+.heroSubtitulo {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+.heroBtns {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimario {
+  background-color: var(--color-primary);
+  color: #ffffff !important;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  text-decoration: none !important;
+  transition: background-color var(--transition);
+}
+
+.btnPrimario:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btnSecundario {
+  background-color: transparent;
+  color: var(--color-text) !important;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  border: 2px solid var(--color-border);
+  text-decoration: none !important;
+  transition: border-color var(--transition);
+}
+
+.btnSecundario:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary) !important;
+}
+
+/* Secciones con slider */
+.seccion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: 0 var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.seccionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.seccionTitulo {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.verTodos {
+  font-weight: 600;
+  color: var(--color-primary);
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+/* Slider con scroll horizontal */
+.slider {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  padding-bottom: var(--space-md);
+  scroll-snap-type: x mandatory; /* el scroll se detiene en cada tarjeta */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultamos la scrollbar visualmente pero mantenemos la funcionalidad */
+.slider::-webkit-scrollbar {
+  height: 4px;
+}
+
+.slider::-webkit-scrollbar-track {
+  background: var(--color-bg-soft);
+  border-radius: 2px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+.sliderItem {
+  flex: 0 0 320px; /* ancho fijo para cada tarjeta */
+  scroll-snap-align: start;
+}
+
+/* Tarjeta de ciudad */
+.ciudadCard {
+  background-color: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  height: 100%;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.ciudadCard:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.ciudadEmoji {
+  font-size: 2.5rem;
+}
+
+.ciudadNombre {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.ciudadProvincia {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.ciudadDescripcion {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .heroTitulo {
+    font-size: var(--font-size-xxl);
+  }
+
+  .sliderItem {
+    flex: 0 0 280px;
+  }
+
+  .seccion {
+    padding: 0 var(--space-md);
+  }
+}

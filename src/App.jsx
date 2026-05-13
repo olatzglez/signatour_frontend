@@ -6,6 +6,7 @@ import ItinerarioList from './pages/ItinerarioList'
 import ItinerarioDetail from './pages/ItinerarioDetail'
 import LoginForm from './pages/LoginForm'
 import RegisterForm from './pages/RegisterForm'
+import Home from './pages/Home'
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Navbar />
         <main>
           <Routes>
-            <Route path="/" element={<ItinerarioList />} />
+            <Route path="/" element={<Home />} />
             <Route path="/itinerarios" element={<ItinerarioList />} />
             <Route path="/itinerarios/:id" element={<ItinerarioDetail />} />
             <Route path="/login" element={<LoginForm />} />

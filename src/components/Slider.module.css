@@ -1,0 +1,113 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.titulo {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.flecha {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition), border-color var(--transition);
+  /* Tamaño mínimo de 44x44px recomendado por WCAG para zonas táctiles */
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.flecha:hover {
+  background-color: var(--color-bg-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.flecha:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.verTodos {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* El slider empieza desde el borde izquierdo */
+.slider {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  padding-left: var(--space-lg);
+  padding-bottom: var(--space-md);
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slider::-webkit-scrollbar {
+  height: 4px;
+}
+
+.slider::-webkit-scrollbar-track {
+  background: var(--color-bg-soft);
+  border-radius: 2px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+/* Última tarjeta con margen a la derecha */
+.item {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+}
+
+.item:last-child {
+  margin-right: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex: 0 0 280px;
+  }
+
+  .header {
+    padding: 0 var(--space-md);
+  }
+
+  .slider {
+    padding-left: var(--space-md);
+  }
+}

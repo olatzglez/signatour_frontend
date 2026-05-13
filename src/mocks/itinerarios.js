@@ -24,6 +24,33 @@ export const itinerarios = [
     provincia: 'Sevilla',
     descripcion: 'Catedral y Alcázar con bucle magnético y subtítulos.',
     duracionMinutos: 150,
-    publico: 'mayores de 12 años'
+    publico: 'todos'
+  },
+  {
+    id: 4,
+    titulo: 'Barcelona modernista',
+    ciudad: 'Barcelona',
+    provincia: 'Barcelona',
+    descripcion: 'Ruta por la Sagrada Família y el Eixample con LSE.',
+    duracionMinutos: 180,
+    publico: 'todos'
+  },
+  {
+    id: 5,
+    titulo: 'Donostia costera',
+    ciudad: 'Donostia',
+    provincia: 'Gipuzkoa',
+    descripcion: 'Paseo por el casco antiguo y el Aquarium con signoguía.',
+    duracionMinutos: 100,
+    publico: 'doce_mas'
+  },
+  {
+    id: 6,
+    titulo: 'Granada nazarí',
+    ciudad: 'Granada',
+    provincia: 'Granada',
+    descripcion: 'Visita a la Alhambra con lectura fácil y bucle magnético.',
+    duracionMinutos: 200,
+    publico: 'todos'
   }
 ]

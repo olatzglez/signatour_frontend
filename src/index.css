@@ -59,7 +59,7 @@ body {
 main {
   flex: 1; /* empuja el footer hacia abajo */
   padding: var(--space-xl) var(--space-md);
-  max-width: 1200px;
+  /*max-width: 1200px;*/
   margin: 0 auto;
   width: 100%;
 }
