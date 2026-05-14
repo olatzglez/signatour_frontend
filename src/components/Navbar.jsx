@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import useDarkMode from '../hooks/useDarkMode'
 import styles from './Navbar.module.css'
 
 function Navbar() {
   const { user, removeUser } = useAuth()
   const navigate = useNavigate()
   const [menuAbierto, setMenuAbierto] = useState(false)
+  const [darkMode, setDarkMode] = useDarkMode()
 
   const handleLogout = () => {
     removeUser()
@@ -18,7 +20,6 @@ function Navbar() {
 
   return (
     <>
-      {/* Navbar normal — visible en escritorio */}
       <nav className={styles.navbar}>
         <div className={styles.inner}>
           <Link to="/" className={styles.logo} onClick={cerrarMenu}>
@@ -26,11 +27,21 @@ function Navbar() {
           </Link>
 
           <ul className={styles.nav}>
-            <li><Link to="/">Inicio</Link></li>
             <li><Link to="/itinerarios">Itinerarios</Link></li>
+            <li><Link to="#">Ciudades</Link></li>
           </ul>
 
           <div className={styles.actions}>
+            {/* Botón modo oscuro */}
+            <button
+              className={styles.btnDarkMode}
+              onClick={() => setDarkMode(!darkMode)}
+              aria-label={darkMode ? 'Activar modo claro' : 'Activar modo oscuro'}
+              title={darkMode ? 'Modo claro' : 'Modo oscuro'}
+            >
+              {darkMode ? '☀️' : '🌙'}
+            </button>
+
             {user ? (
               <>
                 <span className={styles.greeting}>Hola, {user.nombre}</span>
@@ -48,7 +59,6 @@ function Navbar() {
             )}
           </div>
 
-          {/* Botón hamburguesa — solo visible en móvil y tablet */}
           <button
             className={styles.menuBtn}
             onClick={() => setMenuAbierto(!menuAbierto)}
@@ -61,14 +71,12 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Menú overlay — ocupa el 100% de la pantalla en móvil y tablet */}
       <div
         id="nav-menu"
         className={`${styles.menuOverlay} ${menuAbierto ? styles.menuOverlayOpen : ''}`}
         role="dialog"
         aria-label="Menú de navegación"
       >
-        {/* Cabecera del overlay con logo y botón de cerrar */}
         <div className={styles.menuOverlayHeader}>
           <Link to="/" className={styles.logo} onClick={cerrarMenu}>
             SignaTour
@@ -82,14 +90,21 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Enlaces de navegación grandes */}
         <ul className={styles.menuOverlayNav}>
           <li><Link to="/" onClick={cerrarMenu}>Inicio</Link></li>
           <li><Link to="/itinerarios" onClick={cerrarMenu}>Itinerarios</Link></li>
         </ul>
 
-        {/* Acciones de sesión al fondo */}
         <div className={styles.menuOverlayActions}>
+          {/* Botón modo oscuro también en el menú móvil */}
+          <button
+            className={styles.btnDarkMode}
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label={darkMode ? 'Activar modo claro' : 'Activar modo oscuro'}
+          >
+            {darkMode ? '☀️ Modo claro' : '🌙 Modo oscuro'}
+          </button>
+
           {user ? (
             <>
               <span className={styles.greeting}>Hola, {user.nombre}</span>

@@ -12,7 +12,7 @@ function Home() {
       {/* Hero */}
       <section className={styles.hero}>
         <h1 className={styles.heroTitulo}>
-          Cultura accesible para <span>todos</span>
+          Cultura accesible para <span><br></br>todas las personas</span>
         </h1>
         <p className={styles.heroSubtitulo}>
           Descubre itinerarios culturales adaptados para personas sordas

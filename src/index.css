@@ -1,19 +1,19 @@
 /* Variables globales — cambiando aquí afectas a toda la app */
 :root {
   /* Colores principales */
-  --color-primary: #4f6814;      /* naranja Komoot */
-  --color-primary-dark: #212512; /* naranja oscuro para hover — mejor contraste */
-  --color-text: #1A1A1A;         /* texto principal — contraste 16:1 sobre blanco ✅ */
-  --color-text-light: #555555;   /* texto secundario — contraste 7:1 sobre blanco ✅ */
+  --color-primary: #4f6814;     
+  --color-primary-dark: #212512;
+  --color-text: #1A1A1A;        
+  --color-text-light: #555555;  
   --color-bg: #edebe5;
-  --color-bg-soft: #F5F3EF;      /* fondo cálido, como Komoot */
+  --color-bg-soft: #F5F3EF;    
   --color-border: #E0DDD8;
   --color-error: #C0392B;
-  --color-gradient: #0d2b1a;
+  --color-gradient: #212512;
   --color-orange: #ee6b17;
 
   /* Tipografía */
-  --font-main: 'Segoe UI', system-ui, sans-serif;
+  --font-main: "Poppins", Arial, system-ui, sans-serif;
   --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.75rem;
@@ -32,6 +32,17 @@
   --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.14);
   --transition: 0.2s ease;
+}
+
+[data-theme="dark"] {
+  --color-primary: #FF6B47;
+  --color-primary-dark: #E8401C;
+  --color-text: #F0EDEA;
+  --color-text-light: #A89F97;
+  --color-bg: #1A1A1A;
+  --color-bg-soft: #242424;
+  --color-border: #333333;
+  --color-gradient: #0a1f12;
 }
 
 /* Reset y base */
@@ -72,6 +83,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+[data-theme="dark"] a.verTodos{
+  color: #ee6b17!important;
 }
 
 /* Accesibilidad — focus visible para navegación por teclado */
