@@ -4,28 +4,32 @@ import styles from './ItinerarioCard.module.css'
 function ItinerarioCard({ itinerario }) {
   return (
     <article className={styles.card}>
-      <h2 className={styles.titulo}>{itinerario.titulo}</h2>
 
-      <p className={styles.ubicacion}>
-        {itinerario.ciudad}, {itinerario.provincia}
-      </p>
+      {/* Imagen de fondo */}
+      <img
+        src={itinerario.imagen}
+        alt={`Imagen de ${itinerario.ciudad}`}
+        className={styles.imagen}
+      />
 
-      <p className={styles.descripcion}>{itinerario.descripcion}</p>
+      {/* Degradado verde oscuro sobre la imagen */}
+      <div className={styles.degradado} aria-hidden="true" />
 
-      <div className={styles.footer}>
-        {itinerario.duracionMinutos && (
-          <span className={styles.duracion}>
-            {itinerario.duracionMinutos} min
-          </span>
-        )}
-        <Link
-          to={`/itinerarios/${itinerario.id}`}
-          className={styles.enlace}
-          aria-label={`Ver itinerario ${itinerario.titulo}`}
-        >
-          Ver itinerario
-        </Link>
+      {/* Texto pegado al fondo */}
+      <div className={styles.contenido}>
+        <h2 className={styles.titulo}>{itinerario.titulo}</h2>
+        <p className={styles.descripcion}>{itinerario.descripcion}</p>
       </div>
+
+      {/* Flecha naranja arriba a la derecha */}
+      <Link
+        to={`/itinerarios/${itinerario.id}`}
+        className={styles.enlace}
+        aria-label={`Ver itinerario ${itinerario.titulo}`}
+      >
+        ↗
+      </Link>
+
     </article>
   )
 }

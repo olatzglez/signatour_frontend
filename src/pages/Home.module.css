@@ -43,6 +43,7 @@
   gap: var(--space-md);
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .btnPrimario {
@@ -51,7 +52,7 @@
   padding: var(--space-md) var(--space-xl);
   border-radius: var(--radius);
   font-weight: 700;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   text-decoration: none !important;
   transition: background-color var(--transition);
 }
@@ -66,8 +67,8 @@
   padding: var(--space-md) var(--space-xl);
   border-radius: var(--radius);
   font-weight: 700;
-  font-size: var(--font-size-lg);
-  border: 2px solid var(--color-border);
+  font-size: var(--font-size-base);
+  border: 2px solid var(--color-primary);
   text-decoration: none !important;
   transition: border-color var(--transition);
 }
@@ -78,6 +79,12 @@
 }
 
 /* Secciones con slider */
+
+.slider {
+  padding: var(--space-md);
+  margin: var(--space-md);
+}
+
 .seccion {
   display: flex;
   flex-direction: column;

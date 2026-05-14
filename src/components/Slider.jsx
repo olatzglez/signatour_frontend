@@ -35,9 +35,7 @@ function Slider({ titulo, enlace, enlaceTexto = 'Ver todos →', items, renderIt
         <h2 className={styles.titulo}>{titulo}</h2>
 
         <div className={styles.controles}>
-          {enlace && (
-            <a href={enlace} className={styles.verTodos}>{enlaceTexto}</a>
-          )}
+
           <button
             className={styles.flecha}
             onClick={irAtras}
@@ -71,6 +69,9 @@ function Slider({ titulo, enlace, enlaceTexto = 'Ver todos →', items, renderIt
           </div>
         ))}
       </div>
+        {enlace && (
+            <a href={enlace} className={styles.verTodos}>{enlaceTexto}</a>
+        )}
     </div>
   )
 }

@@ -6,7 +6,8 @@ export const itinerarios = [
     provincia: 'Madrid',
     descripcion: 'Ruta por los principales museos con signoguía.',
     duracionMinutos: 120,
-    publico: 'todos'
+    publico: 'todos',
+    imagen: '/images/itinerarios/madrid.jpg'
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const itinerarios = [
     provincia: 'Bizkaia',
     descripcion: 'Visita al Guggenheim y casco viejo con LSE.',
     duracionMinutos: 90,
-    publico: 'adultos'
+    publico: 'adultos',
+    imagen: '/images/itinerarios/bilbao.jpg'
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const itinerarios = [
     provincia: 'Sevilla',
     descripcion: 'Catedral y Alcázar con bucle magnético y subtítulos.',
     duracionMinutos: 150,
-    publico: 'todos'
+    publico: 'todos',
+    imagen: '/images/itinerarios/sevilla.jpg'
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const itinerarios = [
     provincia: 'Barcelona',
     descripcion: 'Ruta por la Sagrada Família y el Eixample con LSE.',
     duracionMinutos: 180,
-    publico: 'todos'
+    publico: 'todos',
+    imagen: '/images/itinerarios/barcelona.jpg'
   },
   {
     id: 5,
@@ -42,7 +46,8 @@ export const itinerarios = [
     provincia: 'Gipuzkoa',
     descripcion: 'Paseo por el casco antiguo y el Aquarium con signoguía.',
     duracionMinutos: 100,
-    publico: 'doce_mas'
+    publico: 'doce_mas',
+    imagen: '/images/itinerarios/donostia.jpg'
   },
   {
     id: 6,
@@ -51,6 +56,7 @@ export const itinerarios = [
     provincia: 'Granada',
     descripcion: 'Visita a la Alhambra con lectura fácil y bucle magnético.',
     duracionMinutos: 200,
-    publico: 'todos'
+    publico: 'todos',
+    imagen: '/images/itinerarios/granada.jpg'
   }
 ]

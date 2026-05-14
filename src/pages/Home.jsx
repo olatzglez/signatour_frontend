@@ -30,6 +30,7 @@ function Home() {
 
       {/* Slider de itinerarios */}
       <Slider
+      className={styles.slider}
         titulo="Itinerarios destacados"
         enlace="/itinerarios"
         items={itinerarios}

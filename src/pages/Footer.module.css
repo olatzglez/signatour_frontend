@@ -1,8 +1,17 @@
 .footer {
-  background-color: var(--color-bg-soft);
-  border-top: 1px solid var(--color-border);
+  background-color: var(--color-primary-dark);
+  border-top: 1px solid var(--color-primary-dark);
   padding: var(--space-xl) var(--space-lg);
   margin-top: auto;
+}
+
+.footer a {
+  color: var(--color-orange);
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: var(--color-bg);
 }
 
 .inner {
@@ -16,13 +25,13 @@
 }
 
 .texto {
-  color: var(--color-text-light);
+  color: var(--color-bg);
   font-size: 0.9rem;
 }
 
 .marca {
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-orange);
 }
 
 @media (max-width: 600px) {
