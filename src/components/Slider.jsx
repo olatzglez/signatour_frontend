@@ -42,7 +42,7 @@ function Slider({ titulo, enlace, enlaceTexto = 'Ver todos →', items, renderIt
             disabled={!puedeIrAtras}
             aria-label="Anterior"
           >
-            ←
+            <img src="/arrow-left.svg" alt="" aria-hidden="true" width="20" height="20" />
           </button>
           <button
             className={styles.flecha}
@@ -50,7 +50,7 @@ function Slider({ titulo, enlace, enlaceTexto = 'Ver todos →', items, renderIt
             disabled={!puedeIrAdelante}
             aria-label="Siguiente"
           >
-            →
+            <img src="/arrow-right.svg" alt="" aria-hidden="true" width="20" height="20" />
           </button>
         </div>
       </div>

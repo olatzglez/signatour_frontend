@@ -20,13 +20,22 @@ function RegisterForm() {
       return
     }
 
+    // Validación de formato de email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailPattern.test(email)) {
+      setError('Por favor, introduce un email válido.')
+      return
+    }
+
     if (password !== confirmPassword) {
       setError('Las contraseñas no coinciden.')
       return
     }
 
-    if (password.length < 8) {
-      setError('La contraseña debe tener al menos 8 caracteres.')
+    // Mínimo 8 caracteres, una mayúscula y un número
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d).{8,}$/
+    if (!passwordPattern.test(password)) {
+      setError('La contraseña debe tener al menos 8 caracteres, una mayúscula y un número.')
       return
     }
 

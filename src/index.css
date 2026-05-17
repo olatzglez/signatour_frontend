@@ -13,7 +13,8 @@
   --color-orange: #ee6b17;
 
   /* Tipografía */
-  --font-main: "Poppins", Arial, system-ui, sans-serif;
+  --font-main: "Roboto", Arial, system-ui, sans-serif;
+  --font-title: "Poppins", Arial, system-ui, sans-serif;
   --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.75rem;
@@ -74,6 +75,10 @@ main {
   /*max-width: 1200px;*/
   margin: 0 auto;
   width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--font-title);
 }
 
 a {

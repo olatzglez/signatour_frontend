@@ -19,6 +19,13 @@ function LoginForm() {
       return
     }
 
+    // Validación de formato de email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailPattern.test(email)) {
+      setError('Por favor, introduce un email válido.')
+      return
+    }
+
     const usuario = usuarios.find(
       u => u.email === email && u.password === password
     )

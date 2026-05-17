@@ -63,11 +63,12 @@
   display: flex;
   align-items: center;
   gap: var(--space-md);
+  font-weight: 700;
 }
 
 .actions a {
   color: var(--color-text);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .greeting {
@@ -80,9 +81,9 @@
   background-color: var(--color-primary);
   color: #ffffff;
   border: none;
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-md) var(--space-md);
   border-radius: var(--radius);
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color var(--transition);
   font-size: var(--font-size-base);
@@ -97,13 +98,19 @@
   color: #ffffff !important;
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius);
-  font-weight: 600;
+  font-weight: 700;
   transition: background-color var(--transition);
 }
 
 .btnRegister:hover {
   background-color: var(--color-primary-dark);
   text-decoration: none !important;
+}
+
+:global([data-theme="dark"]) .btnLogout,
+:global([data-theme="dark"]) .btnRegister {
+  color: #000000 !important;
+  font-weight: 700;
 }
 
 .btnDarkMode {
@@ -184,7 +191,7 @@
 .menuOverlayActions a,
 .menuOverlayActions button {
   font-size: var(--font-size-lg);
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   width: 100%;
 }

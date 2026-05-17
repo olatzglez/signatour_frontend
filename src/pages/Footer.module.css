@@ -9,13 +9,16 @@
   border-top: 1px solid #333333;
 }
 
-:global([data-theme="dark"]) .footer p{
+:global([data-theme="dark"]) .footer p {
   color: #FFFFFF;
-  
+}
+
+:global([data-theme="dark"]) .footer span.marca {
+  color: var(--color-primary);
 }
 
 .footer a {
-  color: var(--color-orange);
+  color: var(--color-primary);
   text-decoration: underline;
 }
 

@@ -28,7 +28,6 @@
   }
 }
 
-
 .header {
   display: flex;
   align-items: center;
@@ -88,6 +87,11 @@
 .flecha:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+/* En modo oscuro invertimos el color de las flechas con un filtro CSS */
+:global([data-theme="dark"]) .flecha img {
+  filter: invert(1);
 }
 
 .verTodos {

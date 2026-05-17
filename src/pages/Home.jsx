@@ -12,7 +12,7 @@ function Home() {
       {/* Hero */}
       <section className={styles.hero}>
         <h1 className={styles.heroTitulo}>
-          Cultura accesible para <span><br></br>todas las personas</span>
+          Cultura accesible para <span><br />todas las personas</span>
         </h1>
         <p className={styles.heroSubtitulo}>
           Descubre itinerarios culturales adaptados para personas sordas
@@ -30,9 +30,9 @@ function Home() {
 
       {/* Slider de itinerarios */}
       <Slider
-      className={styles.slider}
         titulo="Itinerarios destacados"
         enlace="/itinerarios"
+        enlaceTexto="Ver todos los itinerarios →"
         items={itinerarios}
         renderItem={(itinerario) => (
           <ItinerarioCard itinerario={itinerario} />
@@ -42,16 +42,27 @@ function Home() {
       {/* Slider de ciudades */}
       <Slider
         titulo="Explora por ciudades"
+        enlace="/itinerarios"
+        enlaceTexto="Ver todas las ciudades →"
         items={ciudades}
         renderItem={(ciudad) => (
-          <article className={styles.ciudadCard}>
-            <span className={styles.ciudadEmoji} aria-hidden="true">
-              {ciudad.emoji}
-            </span>
-            <h3 className={styles.ciudadNombre}>{ciudad.nombre}</h3>
-            <p className={styles.ciudadProvincia}>{ciudad.provincia}</p>
-            <p className={styles.ciudadDescripcion}>{ciudad.descripcion}</p>
-          </article>
+          <Link
+            to="/itinerarios"
+            className={styles.ciudadEnlace}
+            title={`Ver itinerarios en ${ciudad.nombre} (se abre en pestaña nueva)`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Ver itinerarios en ${ciudad.nombre}, se abre en pestaña nueva`}
+          >
+            <article className={styles.ciudadCard}>
+              <span className={styles.ciudadEmoji} aria-hidden="true">
+                {ciudad.emoji}
+              </span>
+              <h3 className={styles.ciudadNombre}>{ciudad.nombre}</h3>
+              <p className={styles.ciudadProvincia}>{ciudad.provincia}</p>
+              <p className={styles.ciudadDescripcion}>{ciudad.descripcion}</p>
+            </article>
+          </Link>
         )}
       />
 

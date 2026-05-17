@@ -165,7 +165,7 @@
 
 .ciudadCard:hover {
   box-shadow: var(--shadow-hover);
- border-color: var(--color-primary);;
+  border-color: var(--color-primary);
 }
 
 .ciudadEmoji {
@@ -187,6 +187,18 @@
   font-size: 0.9rem;
   color: var(--color-text-light);
   line-height: 1.5;
+}
+
+.ciudadEnlace {
+  display: block;
+  text-decoration: none !important;
+  border-radius: var(--radius);
+  transition: transform var(--transition),/ box-shadow var(--transition);
+}
+
+.ciudadEnlace:hover {
+  /* transform: translateY(-3px); */
+  box-shadow: var(--shadow-hover);
 }
 
 @media (max-width: 768px) {
