@@ -1,0 +1,103 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 800px;
+  margin: var(--space-lg) auto;
+}
+
+.titulo {
+  font-size: var(--font-size-xxl);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+}
+
+.ubicacion {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.ubicacion::before {
+  content: '📍';
+}
+
+.descripcion {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  background-color: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+.volver {
+  background-color: transparent;
+  color: var(--color-text) !important;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  border: 2px solid var(--color-primary);
+  text-decoration: none !important;
+  transition: border-color var(--transition);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.volver:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.volver::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../public/arrow-left.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.error {
+  color: var(--color-text-light);
+  font-size: var(--font-size-lg);
+  text-align: center;
+  padding: var(--space-xxl) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .titulo {
+    font-size: var(--font-size-xl);
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}

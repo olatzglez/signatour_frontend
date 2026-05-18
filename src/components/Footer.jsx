@@ -1,14 +1,18 @@
-// Un componente de presentación puro: no tiene estado ni efectos,
-// solo muestra información estática. Es el tipo más sencillo de componente.
+import styles from '../pages/Footer.module.css'
+
 function Footer() {
-  // new Date().getFullYear() devuelve el año actual automáticamente
-  // así no tienes que actualizarlo cada año a mano
   const año = new Date().getFullYear()
 
   return (
-    <footer>
-      <p>© {año} SignaTour — Itinerarios culturales accesibles</p>
-      <p>Proyecto desarrollado para The Bridge</p>
+    <footer className={styles.footer}>
+      <div className={styles.inner}>
+        <p className={styles.texto}>
+          © {año} <span className={styles.marca}>SignaTour</span> — Itinerarios culturales accesibles
+        </p>
+        <p className={styles.texto}>
+          Proyecto desarrollado por <a href="https://github.com/olatzglez" className={styles.enlace}>Olatz González</a> con ayuda de Clau.
+        </p>
+      </div>
     </footer>
   )
 }

@@ -1,18 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { itinerarios } from '../mocks/itinerarios'
+import styles from './ItinerarioDetail.module.css'
 
 function ItinerarioDetail() {
-  // useParams lee el :id de la URL, por ejemplo /itinerarios/2 → id = "2"
   const { id } = useParams()
-
-  // Tres estados: el itinerario encontrado, si está cargando, y si hay error
   const [itinerario, setItinerario] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  // useEffect se ejecuta cada vez que cambia el id de la URL
-  // Si navegas de /itinerarios/1 a /itinerarios/2, vuelve a buscar
   useEffect(() => {
     const encontrado = itinerarios.find(i => i.id === Number(id))
 
@@ -23,25 +19,46 @@ function ItinerarioDetail() {
     }
 
     setLoading(false)
-  }, [id]) // ← [id] significa "ejecuta esto cada vez que cambie el id"
+  }, [id])
 
-  if (loading) return <p>Cargando...</p>
+  if (loading) return <p className={styles.error}>Cargando...</p>
 
   if (error) return (
-    <p>
-      {error} Intenta buscar otro <Link to="/itinerarios">itinerario</Link> o
-      vuelve a la página de <Link to="/">inicio</Link>.
-    </p>
+    <div className={styles.error}>
+      <p>{error}</p>
+      <Link to="/itinerarios" className={styles.volver}>
+        Volver a la lista
+      </Link>
+    </div>
   )
 
   return (
-    <article>
-      <h1>{itinerario.titulo}</h1>
-      <p>{itinerario.ciudad}, {itinerario.provincia}</p>
-      <p>{itinerario.descripcion}</p>
-      <p>Duración: {itinerario.duracionMinutos} minutos</p>
-      <p>Público: {itinerario.publico}</p>
-      <Link to="/itinerarios">← Volver a la lista</Link>
+    <article className={styles.article}>
+      <Link to="/itinerarios" className={styles.volver}>
+        Volver a la lista
+      </Link>
+
+      <h1 className={styles.titulo}>{itinerario.titulo}</h1>
+
+      <p className={styles.ubicacion}>
+        {itinerario.ciudad}, {itinerario.provincia}
+      </p>
+
+      <p className={styles.descripcion}>{itinerario.descripcion}</p>
+
+      {/* Metadatos del itinerario en píldoras */}
+      <div className={styles.meta}>
+        {itinerario.duracionMinutos && (
+          <span className={styles.metaItem}>
+            ⏱ {itinerario.duracionMinutos} minutos
+          </span>
+        )}
+        {itinerario.publico && (
+          <span className={styles.metaItem}>
+            👥 {itinerario.publico}
+          </span>
+        )}
+      </div>
     </article>
   )
 }
