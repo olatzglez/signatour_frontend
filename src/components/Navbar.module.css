@@ -35,11 +35,29 @@
   color: var(--color-primary) !important;
   text-decoration: none !important;
   letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  font-family: var(--font-title);
 }
 
 .logo:hover {
   text-decoration: none !important;
   opacity: 0.85;
+}
+
+@media (min-width: 480px) {
+  .logo  img{
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo span {
+    display: none;
+  }
 }
 
 .nav {
@@ -74,7 +92,7 @@
 .greeting {
   font-weight: 500;
   color: var(--color-text-light);
-  font-size: 0.9rem;
+  font-size: var(--font-size-base);
 }
 
 .btnLogout {
@@ -117,11 +135,14 @@
   background: none;
   border: 1px solid var(--color-border);
   cursor: pointer;
-  padding: var(--space-sm);
+  padding: var(--space-md);
   transition: color var(--transition);
   border-radius: var(--radius);
   height: 40px;
   width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menuBtn {

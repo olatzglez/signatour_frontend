@@ -22,8 +22,9 @@ function Navbar() {
     <>
       <nav className={styles.navbar}>
         <div className={styles.inner}>
-          <Link to="/" className={styles.logo} onClick={cerrarMenu}>
-            SignaTour
+          <Link to="/" className={styles.logo}>
+            <img src="../logo_ST.svg" alt="SignaTour" height="40" />
+            <span>SignaTour</span>
           </Link>
 
           <ul className={styles.nav}>

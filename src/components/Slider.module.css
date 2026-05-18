@@ -28,6 +28,10 @@
   }
 }
 
+.wrapper .verTodos {
+  color: var(--color-orange);
+}
+
 .header {
   display: flex;
   align-items: center;

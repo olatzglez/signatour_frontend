@@ -6,9 +6,32 @@
   max-width: 100%;
 }
 
+section {
+  padding: var(--space-md) var(--space-xxl);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--space-md) var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: var(--space-md);
+  }
+}
+
+
 /* Hero */
 .hero {
-  background-color: var(--color-bg-soft);
+  background-image: url(/images/img-hero.jpg);
+  background-size: cover;
+  background-position: center;
   border-bottom: 1px solid var(--color-border);
   padding: var(--space-xxl) var(--space-lg);
   text-align: center;
@@ -16,26 +39,50 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-lg);
+  position: relative; /* necesario */
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-gradient);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .heroTitulo {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--color-text);
+  color: var(--color-bg-soft);
   letter-spacing: -1px;
   line-height: 1.1;
   max-width: 700px;
 }
 
+:global([data-theme="dark"]) .heroTitulo {
+  color: #F5F3EF;    
+;
+}
+
 .heroTitulo span {
-  color: var(--color-primary);
+  color: #7A9424;
 }
 
 .heroSubtitulo {
   font-size: var(--font-size-lg);
-  color: var(--color-text-light);
+  color: var(--color-bg-soft);
   max-width: 560px;
   line-height: 1.6;
+}
+
+:global([data-theme="dark"]) .heroSubtitulo {
+  color: #F5F3EF;
 }
 
 .heroBtns {
@@ -65,8 +112,12 @@
   color: #1A1A1A!important;
 }
 
+:global([data-theme="dark"]) button {
+  color : #F5F3EF;
+}
+
 .btnSecundario {
-  background-color: transparent;
+  background-color: var(--color-bg-soft);
   color: var(--color-text) !important;
   padding: var(--space-md) var(--space-xl);
   border-radius: var(--radius);
@@ -80,6 +131,10 @@
 .btnSecundario:hover {
   border-color: var(--color-primary);
   color: var(--color-primary) !important;
+}
+
+::global([data-theme="dark"]) .btnSecundario {
+  background-color: #1a1a1a!important;
 }
 
 /* Secciones con slider */
@@ -112,9 +167,11 @@
   color: var(--color-text);
 }
 
-.verTodos {
+a.verTodos {
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-orange)!important;
+  text-decoration: none;
+  transition: text-decoration var(--transition);
   white-space: nowrap;
   font-size: 0.9rem;
 }
@@ -199,6 +256,11 @@
 .ciudadEnlace:hover {
   /* transform: translateY(-3px); */
   box-shadow: var(--shadow-hover);
+}
+
+[data-theme="dark"] .ciudadCard {
+  border: 1px solid #333333;
+  background: var(--color-bg-soft);
 }
 
 @media (max-width: 768px) {
