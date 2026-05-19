@@ -1,0 +1,230 @@
+.navbar {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.inner {
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-xxl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: var(--space-md) var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    padding: var(--space-md);
+  }
+}
+
+
+.logo {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-primary) !important;
+  text-decoration: none !important;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  font-family: var(--font-title);
+}
+
+.logo:hover {
+  text-decoration: none !important;
+  opacity: 0.85;
+}
+
+@media (min-width: 480px) {
+  .logo  img{
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo span {
+    display: none;
+  }
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  gap: var(--space-lg);
+}
+
+.nav a {
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.nav a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-weight: 700;
+}
+
+.actions a {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.greeting {
+  font-weight: 500;
+  color: var(--color-text-light);
+  font-size: var(--font-size-base);
+}
+
+.btnLogout {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: var(--space-md) var(--space-md);
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  font-size: var(--font-size-base);
+}
+
+.btnLogout:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btnRegister {
+  background-color: var(--color-primary);
+  color: #ffffff !important;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  font-weight: 700;
+  transition: background-color var(--transition);
+}
+
+.btnRegister:hover {
+  background-color: var(--color-primary-dark);
+  text-decoration: none !important;
+}
+
+:global([data-theme="dark"]) .btnLogout,
+:global([data-theme="dark"]) .btnRegister {
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+.btnDarkMode {
+  background: none;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  padding: var(--space-md);
+  transition: color var(--transition);
+  border-radius: var(--radius);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  color: var(--color-text);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Menú desplegado — ocupa toda la pantalla */
+.menuOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg);
+  z-index: 99;
+  flex-direction: column;
+  padding: var(--space-xl) var(--space-lg);
+  gap: var(--space-xl);
+}
+
+.menuOverlayOpen {
+  display: flex;
+}
+
+.menuOverlayHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menuOverlayNav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: var(--space-lg);
+}
+
+.menuOverlayNav a {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.menuOverlayNav a:hover {
+  color: var(--color-primary);
+}
+
+.menuOverlayActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: auto;
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.menuOverlayActions a,
+.menuOverlayActions button {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .menuBtn {
+    display: block;
+  }
+
+  /* Ocultamos la nav y actions normales en móvil */
+  .nav,
+  .actions {
+    display: none;
+  }
+}

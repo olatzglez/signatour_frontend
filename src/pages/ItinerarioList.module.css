@@ -1,0 +1,53 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.titulo {
+  font-size: var(--font-size-xxl);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+}
+
+.subtitulo {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+}
+
+/* Grid responsive — 3 columnas en escritorio, 2 en tablet, 1 en móvil */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo {
+    font-size: var(--font-size-xl);
+  }
+}
+
+.mensaje {
+  color: var(--color-text-light);
+  font-size: var(--font-size-lg);
+  text-align: center;
+  padding: var(--space-xxl) 0;
+}

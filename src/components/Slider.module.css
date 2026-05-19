@@ -1,0 +1,159 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg) 0;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: var(--space-md) 0;
+  }
+}
+
+.wrapper h2, .wrapper .item, .wrapper .verTodos {
+  font-weight: 700;
+  padding-left: var(--space-xxl);
+}
+
+@media (max-width: 768px) {
+  .wrapper h2, .wrapper .item, .wrapper .verTodos {
+    padding-left: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper h2, .wrapper .item, .wrapper .verTodos {
+    padding-left: var(--space-sm);
+  }
+}
+
+.wrapper .verTodos {
+  color: var(--color-orange);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.titulo {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-right: var(--space-xxl);
+}
+
+@media (max-width: 768px) {
+  .wrapper .controles {
+    padding: 0 var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper .controles {
+    padding: 0 var(--space-md);
+  }
+}
+
+.flecha {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition), border-color var(--transition);
+  min-height: 44px;
+}
+
+.flecha:hover {
+  background-color: var(--color-bg-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.flecha:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* En modo oscuro invertimos el color de las flechas con un filtro CSS */
+:global([data-theme="dark"]) .flecha img {
+  filter: invert(1);
+}
+
+.verTodos {
+  font-weight: 600;
+  color: var(--color-primary);
+  white-space: nowrap;
+  padding-left: var(--space-lg);
+}
+
+/* El slider empieza desde el borde izquierdo */
+.slider {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  padding-left: var(--space-lg);
+  padding-bottom: var(--space-md);
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.slider::-webkit-scrollbar {
+  height: 4px;
+  display: none; /* Chrome, Safari */
+}
+
+.slider::-webkit-scrollbar-track {
+  background: var(--color-bg-soft);
+  border-radius: 2px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+/* Última tarjeta con margen a la derecha */
+.item {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+}
+
+.item:last-child {
+  margin-right: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex: 0 0 280px;
+  }
+
+  .header {
+    padding: 0 var(--space-md);
+  }
+
+  .slider {
+    padding-left: var(--space-md);
+  }
+}

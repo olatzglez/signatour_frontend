@@ -1,0 +1,108 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-xxl) var(--space-md);
+}
+
+.card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-xl);
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.titulo {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.error {
+  background-color: #fdecea;
+  border: 1px solid #f5c6c2;
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-error);
+  font-size: 0.9rem;
+  /* color-error sobre fondo #fdecea = contraste 5.5:1 ✅ */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.input {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(232, 64, 28, 0.15);
+}
+
+.boton {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.boton:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.enlace {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.enlace a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .card {
+    box-shadow: none;
+    border: none;
+    padding: var(--space-md) 0;
+  }
+}
